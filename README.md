@@ -20,6 +20,19 @@ This project demonstrates a Spring Boot-based microservice architecture with syn
 
 Order Service (Feign Client) │ └───▶ Inventory Service /inventory/check?product=fridge&qty=2
 
+# Architecture Diagram
+
++-------------------+        Feign Client        +----------------------+
+|                   |  ───────────────────────▶ |                      |
+|  Order Service    |                           |  Inventory Service   |
+|  (demo)           | ◀───────────────────────  |  (inventory-service) |
+|                   |        Stock Response     |                      |
++-------------------+                           +----------------------+
+
+User → /items (POST) → Order MS → checks stock → Inventory MS
+     ← 400 if out of stock, else saves item
+
+
 ---
 
 ## 🚀 How to Run
