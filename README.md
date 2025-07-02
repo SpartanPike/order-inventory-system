@@ -24,7 +24,7 @@ Order Service (Feign Client) │ └───▶ Inventory Service /inventory/ch
 
 ## 🚀 How to Run
 
-bash
+```bash
 # Inventory Service
 cd inventory-service
 mvn spring-boot:run -DskipTests
